@@ -1,0 +1,78 @@
+.game {
+  border: 1px solid grey;
+  padding: 5px;
+  h3 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+.hand-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hand {
+  padding: 2px;
+  &.non-winner {
+    border: 1px solid grey;
+  }
+  &.winner {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
+  }
+  .hand--status {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.card {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid grey;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    2px 2px 5px rgba(50, 50, 50, 0.75);
+  box-shadow:         2px 2px 5px rgba(50, 50, 50, 0.75);
+
+  .card--image {
+    width: 80px;
+    height: auto;
+  }
+}
+
+.card:hover {
+  -webkit-transform: scale(1.1) rotate(-4deg);
+  -moz-transform: scale(1.1) rotate(-4deg);
+  -o-transform: scale(1.1) rotate(-4deg);
+  transform: scale(1.1) rotate(-4deg);
+  z-index: 100;
+}
+
+.card-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.player-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.player {
+  flex-basis: 445px;
+  padding: 10px;
+  border: 1px solid grey;
+  h3 {
+    margin-top: 3px;
+    margin-bottom: 2px;
+  }
+  span {
+    display: block;
+    margin-top: 3px;
+    margin-left: 5px;
+  }
+}

@@ -1,0 +1,67 @@
+#react specific
+node_modules/
+dist/
+coverage/
+.vscode/
+.DS_Store
+
+
+#rails specific
+.idea
+security.log
+.ideaX
+*.sqlite3
+log/*
+tmp/*
+jmeter.*
+/*.csv
+*.jmx
+.bundle/
+contras*.log
+
+## Contrast
+contrast.log
+
+.bundle/
+contrast_service.log
+contrast_agent.log
+contrast.log
+security.log
+## generic files to ignore
+*~
+*.DS_Store
+*.swp
+*.swo
+*.out
+*.rdb
+spec/load/config/license_finder.yml
+spec/load/doc/dependencies.db
+spec/load/jmeter.jmx
+spec/load/jmeter.log
+lib/jmeter.jmx
+doc/*
+codescan.html
+coverage
+!tags/
+gems.tags
+.capistrano
+BUILD_VERSION
+
+# Ignore application configuration
+/config/application.yml*
+
+.project
+.buildpath
+
+brakeman-output.tabs
+
+# Ignore generated swagger.json
+lib/swagger/v1/swagger.json
+
+#Ignore LoadTesting reports
+reports
+
+# Ignore eclipse .settings
+.settings/*
+
+.byebug_history
