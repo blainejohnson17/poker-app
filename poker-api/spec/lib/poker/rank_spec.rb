@@ -104,117 +104,117 @@ describe Poker::Rank do
 
     context 'compare same rank' do
       it 'sorts high_card hands' do
-        high_card_hand1 = Poker::Rank.new(%w[2C 5D AH 9C KH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[2C 5D QH 9C KH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[2C 5D AH 9C KH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[2C 5D QH 9C KH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
       end
 
       it 'sorts one_pair hands' do
-        high_card_hand1 = Poker::Rank.new(%w[6C 6D 7H 9C KH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[5C 5D 7H 9C KH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[6C 6D 7H 9C KH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[5C 5D 7H 9C KH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
 
-        high_card_hand1 = Poker::Rank.new(%w[5C 5D 7H 9C AH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[5C 5D 7H 9C KH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[5C 5D 7H 9C AH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[5C 5D 7H 9C KH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
 
-        high_card_hand1 = Poker::Rank.new(%w[5C 5D 7H TC KH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[5C 5D 7H 9C KH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[5C 5D 7H TC KH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[5C 5D 7H 9C KH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
 
-        high_card_hand1 = Poker::Rank.new(%w[5C 5D 8H 9C KH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[5C 5D 7H 9C KH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[5C 5D 8H 9C KH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[5C 5D 7H 9C KH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
       end
 
       it 'sorts two_pairs hands' do
-        high_card_hand1 = Poker::Rank.new(%w[5C 5D TH TC KH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[5C 5D 9H 9C KH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[5C 5D TH TC KH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[5C 5D 9H 9C KH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
 
-        high_card_hand1 = Poker::Rank.new(%w[6C 6D 9H 9C KH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[5C 5D 9H 9C KH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[6C 6D 9H 9C KH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[5C 5D 9H 9C KH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
 
-        high_card_hand1 = Poker::Rank.new(%w[5C 5D 9H 9C AH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[5C 5D 9H 9C KH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[5C 5D 9H 9C AH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[5C 5D 9H 9C KH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
       end
 
       it 'sorts three_of_a_kind hands' do
-        high_card_hand1 = Poker::Rank.new(%w[6C 6D 6H 9C KH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[5C 5D 5H 9C KH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[6C 6D 6H 9C KH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[5C 5D 5H 9C KH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
 
-        high_card_hand1 = Poker::Rank.new(%w[5C 5D 5H 9C AH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[5C 5D 5H 9C KH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[5C 5D 5H 9C AH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[5C 5D 5H 9C KH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
 
-        high_card_hand1 = Poker::Rank.new(%w[5C 5D 5H TC KH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[5C 5D 5H 9C KH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[5C 5D 5H TC KH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[5C 5D 5H 9C KH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
       end
 
       it 'sorts straight hands' do
-        high_card_hand1 = Poker::Rank.new(%w[TC JD QS KH AH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[9H TC JD QS KH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[TC JD QS KH AH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[9H TC JD QS KH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
       end
 
       it 'sorts flush hands' do
-        high_card_hand1 = Poker::Rank.new(%w[3H 4H 9H QH AH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[3H 4H 9H QH KH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[3H 4H 9H QH AH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[3H 4H 9H QH KH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
 
-        high_card_hand1 = Poker::Rank.new(%w[3H 4H 9H KH AH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[3H 4H 9H QH AH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[3H 4H 9H KH AH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[3H 4H 9H QH AH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
 
-        high_card_hand1 = Poker::Rank.new(%w[3H 4H TH QH AH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[3H 4H 9H QH AH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[3H 4H TH QH AH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[3H 4H 9H QH AH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
 
-        high_card_hand1 = Poker::Rank.new(%w[3H 4H TH QH AH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[3H 4H 9H QH AH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[3H 4H TH QH AH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[3H 4H 9H QH AH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
 
-        high_card_hand1 = Poker::Rank.new(%w[3H 5H 9H QH AH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[3H 4H 9H QH AH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[3H 5H 9H QH AH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[3H 4H 9H QH AH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
 
-        high_card_hand1 = Poker::Rank.new(%w[4H 4H 9H QH AH].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[3H 4H 9H QH AH].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[4H 4H 9H QH AH].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[3H 4H 9H QH AH].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
       end
 
       it 'sorts full_house hands' do
-        high_card_hand1 = Poker::Rank.new(%w[4H 4S 4D TC TD].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[4H 4S 4D 9C 9D].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[4H 4S 4D TC TD].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[4H 4S 4D 9C 9D].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
 
-        high_card_hand1 = Poker::Rank.new(%w[5H 5S 5D 9C 9D].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[4H 4S 4D 9C 9D].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[5H 5S 5D 9C 9D].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[4H 4S 4D 9C 9D].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
 
-        high_card_hand1 = Poker::Rank.new(%w[5H 5S 5D TC TD].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[4H 4S 4D 9C 9D].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[5H 5S 5D TC TD].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[4H 4S 4D 9C 9D].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
       end
 
       it 'sorts four_of_a_kind hands' do
-        high_card_hand1 = Poker::Rank.new(%w[6C 6D 6H 6S 9S].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[5C 5D 5H 5S 9S].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[6C 6D 6H 6S 9S].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[5C 5D 5H 5S 9S].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
 
-        high_card_hand1 = Poker::Rank.new(%w[5C 5D 5H 5S TS].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[5C 5D 5H 5S 9S].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[5C 5D 5H 5S TS].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[5C 5D 5H 5S 9S].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
       end
 
       it 'sorts straight_flush hands' do
-        high_card_hand1 = Poker::Rank.new(%w[TC JC QC KC AC].map{ |c| Poker::Card.new(c) })
-        high_card_hand2 = Poker::Rank.new(%w[9C TC JC QC KC].map{ |c| Poker::Card.new(c) })
-        expect([high_card_hand1, high_card_hand2].max).to eq(high_card_hand1)
+        hand1 = Poker::Rank.new(%w[TC JC QC KC AC].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[9C TC JC QC KC].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2].max).to eq(hand1)
       end
     end
   end
