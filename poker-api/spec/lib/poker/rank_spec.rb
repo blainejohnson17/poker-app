@@ -212,9 +212,16 @@ describe Poker::Rank do
       end
 
       it 'sorts straight_flush hands' do
-        hand1 = Poker::Rank.new(%w[TC JC QC KC AC].map{ |c| Poker::Card.new(c) })
-        hand2 = Poker::Rank.new(%w[9C TC JC QC KC].map{ |c| Poker::Card.new(c) })
+        hand1 = Poker::Rank.new(%w[9C TC JC QC KC].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[8C 9C TC JC QC].map{ |c| Poker::Card.new(c) })
         expect([hand1, hand2].max).to eq(hand1)
+      end
+
+      it 'sorts royal_flush hands' do
+        # 2 royal flushes are same rank so either are valid as max
+        hand1 = Poker::Rank.new(%w[TC JC QC KC AC].map{ |c| Poker::Card.new(c) })
+        hand2 = Poker::Rank.new(%w[TC JC QC KC AC].map{ |c| Poker::Card.new(c) })
+        expect([hand1, hand2]).to include([hand1, hand2].max)
       end
     end
   end
